@@ -559,9 +559,10 @@ export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
     singularName: 'invoice';
     pluralName: 'invoices';
     displayName: 'Invoice';
+    description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     invoiceNumber: Schema.Attribute.String &
