@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "currentPrice": {
+      "type": "decimal",
+      "required": true
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Diseño y desarrollo web",
+        "Hosting web",
+        "Dominio",
+        "Personalizado"
+      ],
+      "required": true
+    },
+    "billingForm": {
+      "type": "enumeration",
+      "enum": [
+        "Monthly",
+        "Annual",
+        "Single Payment"
+      ]
+    },
+    "contractedServices": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::contracted-service.contracted-service",
+      "mappedBy": "service"
+    }
+  }
+}

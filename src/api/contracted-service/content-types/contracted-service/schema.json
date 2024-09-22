@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contracted_services",
+  "info": {
+    "singularName": "contracted-service",
+    "pluralName": "contracted-services",
+    "displayName": "Contracted Service",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "acquisitionDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "endDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "serviceStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Active",
+        "Suspended",
+        "Cancelled"
+      ],
+      "required": true
+    },
+    "domain": {
+      "type": "string"
+    },
+    "adminPanelURL": {
+      "type": "string"
+    },
+    "comments": {
+      "type": "text"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "inversedBy": "contractedServices"
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "contractedServices"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quotation_details",
+  "info": {
+    "singularName": "quotation-detail",
+    "pluralName": "quotation-details",
+    "displayName": "Quotation Detail"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "serviceName": {
+      "type": "string",
+      "required": true
+    },
+    "serviceDescription": {
+      "type": "text"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer",
+      "default": 1,
+      "required": true
+    },
+    "subtotal": {
+      "type": "decimal",
+      "required": true
+    },
+    "quotation": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quotation.quotation",
+      "inversedBy": "quotationDetails"
+    }
+  }
+}

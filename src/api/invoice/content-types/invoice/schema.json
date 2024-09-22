@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invoices",
+  "info": {
+    "singularName": "invoice",
+    "pluralName": "invoices",
+    "displayName": "Invoice"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "invoiceNumber": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "issueDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "dueDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "paidAt": {
+      "type": "datetime"
+    },
+    "invoiceStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Paid",
+        "Cancelled",
+        "Overdue"
+      ],
+      "required": true,
+      "default": "Pending"
+    },
+    "paymenthMethod": {
+      "type": "enumeration",
+      "enum": [
+        "Transferencia Bancaria",
+        "Tarjeta de crédito",
+        "Tarjeta de débito",
+        "Otro"
+      ]
+    },
+    "invoiceURL": {
+      "type": "text"
+    },
+    "subtotal": {
+      "type": "decimal",
+      "required": true
+    },
+    "discount": {
+      "type": "decimal",
+      "default": 0
+    },
+    "tax": {
+      "type": "decimal",
+      "required": true
+    },
+    "total": {
+      "type": "decimal",
+      "required": true
+    },
+    "customer": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "invoices"
+    },
+    "invoiceDetails": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::invoice-detail.invoice-detail",
+      "mappedBy": "invoice"
+    }
+  }
+}
