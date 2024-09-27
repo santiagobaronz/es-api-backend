@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-09-22T21:48:56.563Z"
+    "x-generation-date": "2024-09-27T03:45:37.875Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -5777,7 +5777,7 @@
                                   "Overdue"
                                 ]
                               },
-                              "paymenthMethod": {
+                              "paymentMethod": {
                                 "type": "string",
                                 "enum": [
                                   "Transferencia Bancaria",
@@ -5854,6 +5854,15 @@
                                           "type": "string"
                                         }
                                       }
+                                    },
+                                    "category": {
+                                      "type": "string",
+                                      "enum": [
+                                        "Diseño y desarrollo web",
+                                        "Hosting web",
+                                        "Dominio",
+                                        "Personalizado"
+                                      ]
                                     },
                                     "createdAt": {
                                       "type": "string",
@@ -6269,7 +6278,8 @@
                           "type": "string",
                           "enum": [
                             "Cédula de ciudadanía",
-                            "Pasaporte"
+                            "Pasaporte",
+                            "RUC"
                           ]
                         },
                         "createdAt": {
@@ -6549,7 +6559,7 @@
                   "Overdue"
                 ]
               },
-              "paymenthMethod": {
+              "paymentMethod": {
                 "type": "string",
                 "enum": [
                   "Transferencia Bancaria",
@@ -6700,7 +6710,7 @@
               "Overdue"
             ]
           },
-          "paymenthMethod": {
+          "paymentMethod": {
             "type": "string",
             "enum": [
               "Transferencia Bancaria",
@@ -7234,7 +7244,7 @@
                         "Overdue"
                       ]
                     },
-                    "paymenthMethod": {
+                    "paymentMethod": {
                       "type": "string",
                       "enum": [
                         "Transferencia Bancaria",
@@ -7311,6 +7321,15 @@
                                 "type": "string"
                               }
                             }
+                          },
+                          "category": {
+                            "type": "string",
+                            "enum": [
+                              "Diseño y desarrollo web",
+                              "Hosting web",
+                              "Dominio",
+                              "Personalizado"
+                            ]
                           },
                           "createdAt": {
                             "type": "string",
@@ -7916,7 +7935,8 @@
                 "type": "string",
                 "enum": [
                   "Cédula de ciudadanía",
-                  "Pasaporte"
+                  "Pasaporte",
+                  "RUC"
                 ]
               },
               "createdAt": {
@@ -8061,7 +8081,8 @@
               "serviceName",
               "price",
               "quantity",
-              "subtotal"
+              "subtotal",
+              "category"
             ],
             "type": "object",
             "properties": {
@@ -8092,6 +8113,15 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "category": {
+                "type": "string",
+                "enum": [
+                  "Diseño y desarrollo web",
+                  "Hosting web",
+                  "Dominio",
+                  "Personalizado"
+                ]
               },
               "locale": {
                 "type": "string"
@@ -8155,7 +8185,8 @@
           "serviceName",
           "price",
           "quantity",
-          "subtotal"
+          "subtotal",
+          "category"
         ],
         "properties": {
           "id": {
@@ -8214,7 +8245,7 @@
                   "Overdue"
                 ]
               },
-              "paymenthMethod": {
+              "paymentMethod": {
                 "type": "string",
                 "enum": [
                   "Transferencia Bancaria",
@@ -9223,7 +9254,8 @@
                     "type": "string",
                     "enum": [
                       "Cédula de ciudadanía",
-                      "Pasaporte"
+                      "Pasaporte",
+                      "RUC"
                     ]
                   },
                   "createdAt": {
@@ -9317,6 +9349,15 @@
                           "type": "string"
                         }
                       }
+                    },
+                    "category": {
+                      "type": "string",
+                      "enum": [
+                        "Diseño y desarrollo web",
+                        "Hosting web",
+                        "Dominio",
+                        "Personalizado"
+                      ]
                     },
                     "createdAt": {
                       "type": "string",
@@ -9424,6 +9465,15 @@
                 }
               }
             }
+          },
+          "category": {
+            "type": "string",
+            "enum": [
+              "Diseño y desarrollo web",
+              "Hosting web",
+              "Dominio",
+              "Personalizado"
+            ]
           },
           "createdAt": {
             "type": "string",
@@ -10110,7 +10160,7 @@
                         "Overdue"
                       ]
                     },
-                    "paymenthMethod": {
+                    "paymentMethod": {
                       "type": "string",
                       "enum": [
                         "Transferencia Bancaria",
@@ -10187,6 +10237,15 @@
                                 "type": "string"
                               }
                             }
+                          },
+                          "category": {
+                            "type": "string",
+                            "enum": [
+                              "Diseño y desarrollo web",
+                              "Hosting web",
+                              "Dominio",
+                              "Personalizado"
+                            ]
                           },
                           "createdAt": {
                             "type": "string",
@@ -10792,7 +10851,8 @@
                 "type": "string",
                 "enum": [
                   "Cédula de ciudadanía",
-                  "Pasaporte"
+                  "Pasaporte",
+                  "RUC"
                 ]
               },
               "createdAt": {
@@ -11587,7 +11647,7 @@
                         "Overdue"
                       ]
                     },
-                    "paymenthMethod": {
+                    "paymentMethod": {
                       "type": "string",
                       "enum": [
                         "Transferencia Bancaria",
@@ -11664,6 +11724,15 @@
                                 "type": "string"
                               }
                             }
+                          },
+                          "category": {
+                            "type": "string",
+                            "enum": [
+                              "Diseño y desarrollo web",
+                              "Hosting web",
+                              "Dominio",
+                              "Personalizado"
+                            ]
                           },
                           "createdAt": {
                             "type": "string",
@@ -12269,7 +12338,8 @@
                 "type": "string",
                 "enum": [
                   "Cédula de ciudadanía",
-                  "Pasaporte"
+                  "Pasaporte",
+                  "RUC"
                 ]
               },
               "createdAt": {
@@ -13076,7 +13146,7 @@
                             "Overdue"
                           ]
                         },
-                        "paymenthMethod": {
+                        "paymentMethod": {
                           "type": "string",
                           "enum": [
                             "Transferencia Bancaria",
@@ -13153,6 +13223,15 @@
                                     "type": "string"
                                   }
                                 }
+                              },
+                              "category": {
+                                "type": "string",
+                                "enum": [
+                                  "Diseño y desarrollo web",
+                                  "Hosting web",
+                                  "Dominio",
+                                  "Personalizado"
+                                ]
                               },
                               "createdAt": {
                                 "type": "string",
@@ -13576,7 +13655,8 @@
                     "type": "string",
                     "enum": [
                       "Cédula de ciudadanía",
-                      "Pasaporte"
+                      "Pasaporte",
+                      "RUC"
                     ]
                   },
                   "createdAt": {
@@ -14639,7 +14719,7 @@
                               "Overdue"
                             ]
                           },
-                          "paymenthMethod": {
+                          "paymentMethod": {
                             "type": "string",
                             "enum": [
                               "Transferencia Bancaria",
@@ -14716,6 +14796,15 @@
                                       "type": "string"
                                     }
                                   }
+                                },
+                                "category": {
+                                  "type": "string",
+                                  "enum": [
+                                    "Diseño y desarrollo web",
+                                    "Hosting web",
+                                    "Dominio",
+                                    "Personalizado"
+                                  ]
                                 },
                                 "createdAt": {
                                   "type": "string",
@@ -15131,7 +15220,8 @@
                       "type": "string",
                       "enum": [
                         "Cédula de ciudadanía",
-                        "Pasaporte"
+                        "Pasaporte",
+                        "RUC"
                       ]
                     },
                     "createdAt": {

@@ -39,7 +39,7 @@
       "required": true,
       "default": "Pending"
     },
-    "paymenthMethod": {
+    "paymentMethod": {
       "type": "enumeration",
       "enum": [
         "Transferencia Bancaria",
@@ -49,7 +49,7 @@
       ]
     },
     "invoiceURL": {
-      "type": "text"
+      "type": "string"
     },
     "subtotal": {
       "type": "decimal",

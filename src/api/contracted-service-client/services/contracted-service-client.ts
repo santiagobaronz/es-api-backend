@@ -5,8 +5,6 @@ module.exports = {
             return ctx.response.status = 401;
         }
 
-        console.log('ctx.request.body:', ctx.state.user.id);
-
         try {
             const response = await strapi.db.query('api::contracted-service.contracted-service').findMany({
                 where:{

@@ -493,7 +493,7 @@ export interface PluginUsersPermissionsUser
     firstName: Schema.Attribute.String & Schema.Attribute.Required;
     lastName: Schema.Attribute.String & Schema.Attribute.Required;
     documentType: Schema.Attribute.Enumeration<
-      ['C\u00E9dula de ciudadan\u00EDa', 'Pasaporte']
+      ['C\u00E9dula de ciudadan\u00EDa', 'Pasaporte', 'RUC']
     > &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
@@ -576,7 +576,7 @@ export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Pending'>;
-    paymenthMethod: Schema.Attribute.Enumeration<
+    paymentMethod: Schema.Attribute.Enumeration<
       [
         'Transferencia Bancaria',
         'Tarjeta de cr\u00E9dito',
@@ -584,7 +584,7 @@ export interface ApiInvoiceInvoice extends Struct.CollectionTypeSchema {
         'Otro',
       ]
     >;
-    invoiceURL: Schema.Attribute.Text;
+    invoiceURL: Schema.Attribute.String;
     subtotal: Schema.Attribute.Decimal & Schema.Attribute.Required;
     discount: Schema.Attribute.Decimal & Schema.Attribute.DefaultTo<0>;
     tax: Schema.Attribute.Decimal & Schema.Attribute.Required;
@@ -619,6 +619,7 @@ export interface ApiInvoiceDetailInvoiceDetail
     singularName: 'invoice-detail';
     pluralName: 'invoice-details';
     displayName: 'Invoice Detail';
+    description: '';
   };
   options: {
     draftAndPublish: false;
@@ -632,6 +633,15 @@ export interface ApiInvoiceDetailInvoiceDetail
       Schema.Attribute.DefaultTo<1>;
     subtotal: Schema.Attribute.Decimal & Schema.Attribute.Required;
     invoice: Schema.Attribute.Relation<'manyToOne', 'api::invoice.invoice'>;
+    category: Schema.Attribute.Enumeration<
+      [
+        'Dise\u00F1o y desarrollo web',
+        'Hosting web',
+        'Dominio',
+        'Personalizado',
+      ]
+    > &
+      Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

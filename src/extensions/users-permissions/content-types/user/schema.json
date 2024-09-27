@@ -130,7 +130,8 @@
       "type": "enumeration",
       "enum": [
         "Cédula de ciudadanía",
-        "Pasaporte"
+        "Pasaporte",
+        "RUC"
       ],
       "required": true
     }

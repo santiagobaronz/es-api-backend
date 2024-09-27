@@ -4,7 +4,8 @@
   "info": {
     "singularName": "invoice-detail",
     "pluralName": "invoice-details",
-    "displayName": "Invoice Detail"
+    "displayName": "Invoice Detail",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -36,6 +37,16 @@
       "relation": "manyToOne",
       "target": "api::invoice.invoice",
       "inversedBy": "invoiceDetails"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Diseño y desarrollo web",
+        "Hosting web",
+        "Dominio",
+        "Personalizado"
+      ],
+      "required": true
     }
   }
 }
